@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Digital Marketing Services | Shivaratna Technologies{% endblock %}
+
+{% block content %}
+<section class="service-detail">
+    <div class="service-header">
+        <div class="service-icon-large">📈</div>
+        <h1 class="section-title">Digital Marketing Services</h1>
+    </div>
+    
+    <div class="service-content">
+        <p>Boost your online presence and reach your target audience effectively with our comprehensive digital marketing strategies.</p>
+        
+        <h2>Our Digital Marketing Solutions</h2>
+        <p>We create data-driven marketing campaigns that deliver measurable results and maximize your return on investment.</p>
+        
+        <h2>Services Include</h2>
+        <ul>
+            <li>Search Engine Optimization (SEO)</li>
+            <li>Pay-Per-Click Advertising (PPC)</li>
+            <li>Social Media Marketing</li>
+            <li>Content Marketing</li>
+            <li>Email Marketing</li>
+            <li>Conversion Rate Optimization</li>
+            <li>Marketing Analytics</li>
+        </ul>
+        
+        <h2>Our Approach</h2>
+        <p>We combine creativity with analytics to develop campaigns that resonate with your audience while achieving your business objectives.</p>
+        
+        <div class="project-links">
+            <a href="{{ url_for('company_projects', service='marketing') }}" class="project-card">
+                <i class="fas fa-building"></i>
+                <h3>Company Projects</h3>
+                <p>See our successful marketing campaigns for businesses</p>
+            </a>
+            
+            <a href="{{ url_for('student_projects', service='marketing') }}" class="project-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Student Projects</h3>
+                <p>View creative marketing projects by our students</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

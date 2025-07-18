@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+
+{% block title %}Company Projects | Shivaratna Technologies{% endblock %}
+
+{% block content %}
+<section class="projects-page">
+    <div class="page-header">
+        <h1 class="section-title">Company Projects</h1>
+        <p>Our professional implementations for corporate clients</p>
+    </div>
+    
+    <div class="projects-container">
+        {% if service == 'it' %}
+            <h2>IT Services Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Enterprise Resource Planning System</h3>
+                    <p>Custom ERP solution for a manufacturing company that streamlined their operations across 5 locations.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Jan 2025</span>
+                        <span><i class="fas fa-users"></i> 12 team members</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Cloud Migration for Financial Services</h3>
+                    <p>Securely migrated legacy systems to cloud infrastructure with zero downtime for a banking client.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Nov 2024</span>
+                        <span><i class="fas fa-users"></i> 8 team members</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'marketing' %}
+            <h2>Digital Marketing Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>E-commerce SEO Campaign</h3>
+                    <p>Increased organic traffic by 320% for an online retailer through comprehensive SEO strategy.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Mar 2025</span>
+                        <span><i class="fas fa-chart-line"></i> 320% growth</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Social Media Brand Awareness</h3>
+                    <p>Developed and executed a social media strategy that increased engagement by 180% for a B2B client.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Dec 2024</span>
+                        <span><i class="fas fa-users"></i> 1.2M reach</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'ai' %}
+            <h2>AI & ML Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Predictive Maintenance System</h3>
+                    <p>AI-powered system that reduced equipment downtime by 45% for an industrial client.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Feb 2025</span>
+                        <span><i class="fas fa-cogs"></i> 45% improvement</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Customer Service Chatbot</h3>
+                    <p>NLP-based chatbot that handles 80% of customer inquiries without human intervention.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Oct 2024</span>
+                        <span><i class="fas fa-robot"></i> 80% automation</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'mechanical' %}
+            <h2>Mechanical Design Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Automated Assembly Line</h3>
+                    <p>Designed and implemented a fully automated production line for automotive parts manufacturer.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Jan 2025</span>
+                        <span><i class="fas fa-tachometer-alt"></i> 30% faster</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>HVAC System Optimization</h3>
+                    <p>Redesigned HVAC system for a commercial building achieving 25% energy savings.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Sep 2024</span>
+                        <span><i class="fas fa-bolt"></i> 25% savings</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'civil' %}
+            <h2>Civil Planning Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Residential Township Planning</h3>
+                    <p>Master planning and infrastructure design for a 100-acre residential development.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Mar 2025</span>
+                        <span><i class="fas fa-home"></i> 500 units</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Bridge Structural Design</h3>
+                    <p>Structural analysis and design for a 1.2km river bridge with innovative materials.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Nov 2024</span>
+                        <span><i class="fas fa-bridge"></i> 1.2km span</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'analytics' %}
+            <h2>Data Analytics Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Retail Sales Dashboard</h3>
+                    <p>Interactive BI dashboard that provides real-time sales analytics across 50+ stores.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Feb 2025</span>
+                        <span><i class="fas fa-store"></i> 50+ locations</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Customer Churn Prediction</h3>
+                    <p>Predictive model that identifies at-risk customers with 85% accuracy.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Dec 2024</span>
+                        <span><i class="fas fa-chart-pie"></i> 85% accuracy</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% else %}
+            <div class="all-services">
+                <h2>Browse Projects by Service</h2>
+                <div class="services-grid">
+                    <a href="?service=it" class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>IT Services</h3>
+                    </a>
+                    <a href="?service=marketing" class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h3>Digital Marketing</h3>
+                    </a>
+                    <a href="?service=ai" class="service-card">
+                        <div class="service-icon">🤖</div>
+                        <h3>AI & ML</h3>
+                    </a>
+                    <a href="?service=mechanical" class="service-card">
+                        <div class="service-icon">🛠️</div>
+                        <h3>Mechanical Design</h3>
+                    </a>
+                    <a href="?service=civil" class="service-card">
+                        <div class="service-icon">🏗️</div>
+                        <h3>Civil Planning</h3>
+                    </a>
+                    <a href="?service=analytics" class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Data Analytics</h3>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<style>
+    .projects-page {
+        padding: 8rem 5% 6rem;
+        background-color: var(--white);
+    }
+    
+    .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .page-header p {
+        color: var(--text-light);
+        font-size: 1.2rem;
+    }
+    
+    .projects-container h2 {
+        color: var(--primary);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .project-item {
+        background-color: var(--light);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+    }
+    
+    .project-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .project-item h3 {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+    }
+    
+    .project-item p {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-meta {
+        display: flex;
+        gap: 1.5rem;
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+    
+    .project-meta i {
+        margin-right: 5px;
+        color: var(--accent);
+    }
+    
+    .all-services {
+        text-align: center;
+    }
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}

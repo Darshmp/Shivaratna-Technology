@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+
+{% block title %}Student Projects | Shivaratna Technologies{% endblock %}
+
+{% block content %}
+<section class="projects-page">
+    <div class="page-header">
+        <h1 class="section-title">Student Projects</h1>
+        <p>Innovative projects developed by our talented students</p>
+    </div>
+    
+    <div class="projects-container">
+        {% if service == 'it' %}
+            <h2>IT Services Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Campus Management System</h3>
+                    <p>Web application that automates student registration, attendance, and grading for educational institutions.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Rahul Sharma</span>
+                        <span><i class="fas fa-calendar-alt"></i> May 2025</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Mobile Health Tracker</h3>
+                    <p>Cross-platform app that monitors vital signs and provides health recommendations.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Priya Patel</span>
+                        <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'marketing' %}
+            <h2>Digital Marketing Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Local Business SEO Strategy</h3>
+                    <p>Comprehensive local SEO campaign that increased foot traffic by 150% for a small business.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Ananya Gupta</span>
+                        <span><i class="fas fa-calendar-alt"></i> Jun 2025</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Influencer Marketing Platform</h3>
+                    <p>Platform connecting brands with micro-influencers for targeted campaigns.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Vikram Joshi</span>
+                        <span><i class="fas fa-calendar-alt"></i> Mar 2025</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'ai' %}
+            <h2>AI & ML Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Sign Language Translator</h3>
+                    <p>Computer vision system that translates sign language to text in real-time.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Neha Reddy</span>
+                        <span><i class="fas fa-calendar-alt"></i> May 2025</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Agricultural Disease Detection</h3>
+                    <p>ML model that identifies plant diseases from leaf images with 92% accuracy.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Arjun Kumar</span>
+                        <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'mechanical' %}
+            <h2>Mechanical Design Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Solar-Powered Water Purifier</h3>
+                    <p>Portable device that uses solar energy to purify water for rural communities.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Deepak Singh</span>
+                        <span><i class="fas fa-calendar-alt"></i> Jun 2025</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>3D Printed Prosthetic Hand</h3>
+                    <p>Low-cost prosthetic hand with basic grasping functionality.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Meera Iyer</span>
+                        <span><i class="fas fa-calendar-alt"></i> Feb 2025</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'civil' %}
+            <h2>Civil Planning Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>Flood-Resistant Housing Design</h3>
+                    <p>Innovative housing design for flood-prone areas with elevated structures.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Sanjay Verma</span>
+                        <span><i class="fas fa-calendar-alt"></i> May 2025</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Urban Traffic Flow Optimization</h3>
+                    <p>Simulation model that suggests traffic light timing improvements for reduced congestion.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Anjali Desai</span>
+                        <span><i class="fas fa-calendar-alt"></i> Mar 2025</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% elif service == 'analytics' %}
+            <h2>Data Analytics Projects</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <h3>COVID-19 Spread Predictor</h3>
+                    <p>Dashboard that predicts infection spread based on mobility data and case history.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Rohan Malhotra</span>
+                        <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Stock Market Sentiment Analysis</h3>
+                    <p>Tool that analyzes news sentiment to predict stock price movements.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user-graduate"></i> Sneha Kapoor</span>
+                        <span><i class="fas fa-calendar-alt"></i> Jan 2025</span>
+                    </div>
+                </div>
+            </div>
+            
+        {% else %}
+            <div class="all-services">
+                <h2>Browse Projects by Service</h2>
+                <div class="services-grid">
+                    <a href="?service=it" class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>IT Services</h3>
+                    </a>
+                    <a href="?service=marketing" class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h3>Digital Marketing</h3>
+                    </a>
+                    <a href="?service=ai" class="service-card">
+                        <div class="service-icon">🤖</div>
+                        <h3>AI & ML</h3>
+                    </a>
+                    <a href="?service=mechanical" class="service-card">
+                        <div class="service-icon">🛠️</div>
+                        <h3>Mechanical Design</h3>
+                    </a>
+                    <a href="?service=civil" class="service-card">
+                        <div class="service-icon">🏗️</div>
+                        <h3>Civil Planning</h3>
+                    </a>
+                    <a href="?service=analytics" class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Data Analytics</h3>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<style>
+    .projects-page {
+        padding: 8rem 5% 6rem;
+        background-color: var(--white);
+    }
+    
+    .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .page-header p {
+        color: var(--text-light);
+        font-size: 1.2rem;
+    }
+    
+    .projects-container h2 {
+        color: var(--primary);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .project-item {
+        background-color: var(--light);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+    }
+    
+    .project-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .project-item h3 {
+        color: var(--secondary);
+        margin-bottom: 1rem;
+    }
+    
+    .project-item p {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-meta {
+        display: flex;
+        gap: 1.5rem;
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+    
+    .project-meta i {
+        margin-right: 5px;
+        color: var(--accent);
+    }
+    
+    .all-services {
+        text-align: center;
+    }
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}

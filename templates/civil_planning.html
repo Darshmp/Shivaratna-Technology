@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Civil Planning & Estimation | Shivaratna Technologies{% endblock %}
+
+{% block content %}
+<section class="service-detail">
+    <div class="service-header">
+        <div class="service-icon-large">🏗️</div>
+        <h1 class="section-title">Civil Planning & Estimation</h1>
+    </div>
+    
+    <div class="service-content">
+        <p>Comprehensive civil engineering solutions from planning to execution with precise cost estimation.</p>
+        
+        <h2>Civil Engineering Services</h2>
+        <p>We provide end-to-end civil engineering solutions for residential, commercial, and infrastructure projects.</p>
+        
+        <h2>Our Services</h2>
+        <ul>
+            <li>Structural Design & Analysis</li>
+            <li>Construction Planning</li>
+            <li>Quantity Surveying</li>
+            <li>Project Cost Estimation</li>
+            <li>Site Supervision</li>
+            <li>Quality Assurance</li>
+            <li>Infrastructure Planning</li>
+        </ul>
+        
+        <h2>Why Work With Us?</h2>
+        <p>Our civil engineering team combines technical expertise with practical construction knowledge to deliver feasible and cost-effective solutions.</p>
+        
+        <div class="project-links">
+            <a href="{{ url_for('company_projects', service='civil') }}" class="project-card">
+                <i class="fas fa-building"></i>
+                <h3>Company Projects</h3>
+                <p>Explore our completed civil engineering projects</p>
+            </a>
+            
+            <a href="{{ url_for('student_projects', service='civil') }}" class="project-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Student Projects</h3>
+                <p>View innovative civil engineering concepts</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

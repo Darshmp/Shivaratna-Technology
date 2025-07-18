@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}AI & Machine Learning | Shivaratna Technologies{% endblock %}
+
+{% block content %}
+<section class="service-detail">
+    <div class="service-header">
+        <div class="service-icon-large">🤖</div>
+        <h1 class="section-title">AI & Machine Learning</h1>
+    </div>
+    
+    <div class="service-content">
+        <p>Leverage the power of artificial intelligence to transform your business operations and gain competitive advantage.</p>
+        
+        <h2>AI Solutions</h2>
+        <p>We develop intelligent systems that learn from data, automate processes, and provide actionable insights.</p>
+        
+        <h2>Our Expertise</h2>
+        <ul>
+            <li>Predictive Analytics</li>
+            <li>Natural Language Processing</li>
+            <li>Computer Vision</li>
+            <li>Recommendation Systems</li>
+            <li>Chatbots & Virtual Assistants</li>
+            <li>Anomaly Detection</li>
+            <li>Process Automation</li>
+        </ul>
+        
+        <h2>Why Our AI Solutions?</h2>
+        <p>Our team of data scientists and engineers build custom AI models tailored to your specific business needs, ensuring maximum impact and ROI.</p>
+        
+        <div class="project-links">
+            <a href="{{ url_for('company_projects', service='ai') }}" class="project-card">
+                <i class="fas fa-building"></i>
+                <h3>Company Projects</h3>
+                <p>Explore our AI implementations for enterprises</p>
+            </a>
+            
+            <a href="{{ url_for('student_projects', service='ai') }}" class="project-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Student Projects</h3>
+                <p>Discover innovative AI projects by our students</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+{% block title %}IT Services & Solutions | Shivaratna Technologies{% endblock %}
+
+{% block content %}
+<section class="service-detail">
+    <div class="service-header">
+        <div class="service-icon-large">💻</div>
+        <h1 class="section-title">IT Services & Solutions</h1>
+    </div>
+    
+    <div class="service-content">
+        <p>Our IT Services & Solutions are designed to transform your business operations, enhance efficiency, and drive growth through cutting-edge technology implementations.</p>
+        
+        <h2>Comprehensive IT Solutions</h2>
+        <p>We offer end-to-end IT services that cover every aspect of your technology needs, from infrastructure setup to ongoing maintenance and support.</p>
+        
+        <h2>Our Offerings</h2>
+        <ul>
+            <li>Custom Software Development</li>
+            <li>Enterprise Application Integration</li>
+            <li>Cloud Migration & Management</li>
+            <li>IT Infrastructure Setup & Maintenance</li>
+            <li>Network Security Solutions</li>
+            <li>24/7 Technical Support</li>
+            <li>System Automation & Optimization</li>
+        </ul>
+        
+        <h2>Why Choose Us?</h2>
+        <p>With over a decade of experience in delivering IT solutions across various industries, we bring deep expertise and innovative approaches to every project. Our solutions are scalable, secure, and tailored to your specific business requirements.</p>
+        
+        <div class="project-links">
+            <a href="{{ url_for('company_projects', service='it') }}" class="project-card">
+                <i class="fas fa-building"></i>
+                <h3>Company Projects</h3>
+                <p>Explore our professional IT solutions developed for corporate clients</p>
+            </a>
+            
+            <a href="{{ url_for('student_projects', service='it') }}" class="project-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Student Projects</h3>
+                <p>Discover innovative projects created by our student interns</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

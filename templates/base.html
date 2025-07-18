@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>{% block title %}Shivaratna Technologies{% endblock %}</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #777;
+            --white: #fff;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 30px;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Service Detail Specific */
+        .service-detail {
+            padding: 8rem 5% 6rem;
+            background-color: var(--white);
+        }
+
+        .service-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .service-icon-large {
+            font-size: 4rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .service-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .service-content ul {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .service-content li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .service-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .project-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        /* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--white);
+    padding: 12px 16px;
+    display: block;
+    transition: var(--transition);
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondary);
+}
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 5rem 5% 2rem;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 3rem;
+        }
+
+        .footer-column {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-bottom: 1.8rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-info i {
+            margin-right: 12px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+/* Mobile Menu Styles */
+    .menu-toggle {
+        display: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    /* Media Query for screens up to 768px */
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+        
+        nav ul {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            flex-direction: column;
+            padding: 1rem 5%;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        nav ul.active {
+            display: flex;
+        }
+        
+        nav ul li {
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a::after {
+            bottom: 0;
+        }
+        
+        .dropdown-content {
+            position: static;
+            display: none;
+            width: 100%;
+            box-shadow: none;
+            background-color: rgba(0,0,0,0.1);
+        }
+        
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+        
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+        
+        .hero p {
+            font-size: 1rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* Media Query for screens up to 350px */
+    @media (max-width: 350px) {
+        .logo {
+            font-size: 1.4rem;
+        }
+        
+        .menu-toggle {
+            font-size: 1.3rem;
+        }
+        
+        .hero {
+            padding: 8rem 5% 4rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.5rem;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+        }
+        
+        .service-card {
+            padding: 1.5rem 1rem;
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.1rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+        }
+        
+        .contact-info li {
+            font-size: 0.9rem;
+        }
+    }
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .footer-column {
+                flex: 1;
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .project-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+         @media (max-width: 500px) {
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem;
+        }
+        
+        .footer-column {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-column:nth-child(1) {
+            grid-column: span 2;
+            font-size: 1rem;
+        }
+       
+        .footer-column:nth-child(3),
+        .footer-column:nth-child(4) {
+            grid-column: span 0;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.6rem;
+            font-size: 0.8rem;
+        }
+        
+        .contact-info li{
+            margin-bottom: 0.6rem;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+        .social-icons {
+            margin-top: 1rem;
+        }
+        
+        .social-icons a {
+            width: 25px;
+            height: 25px;
+            font-size: 0.7rem;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            font-size: 0.8rem;
+        }
+    }
+  </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+    <div class="header-container">
+        <div class="logo">Shivaratna <span>Technologies</span></div>
+        <nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('index') }}#services">Services</a></li>
+                <li class="dropdown">
+                    <a href="#projects">Projects <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('company_projects') }}">Company Projects</a>
+                        <a href="{{ url_for('student_projects') }}">Student Projects</a>
+                    </div>
+                </li>
+                <li><a href="{{ url_for('index') }}#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    
+    {% block content %}{% endblock %}
+    
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Shivaratna Technologies</h3>
+                <p>Innovative IT solutions provider helping businesses harness the power of technology for growth and efficiency.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('index') }}#services">Services</a></li>
+                    <li class="dropdown">
+                    <a href="#projects">Projects <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                         <a href="{{ url_for('company_projects') }}">Company Projects</a>
+                         <a href="{{ url_for('student_projects') }}">Student Projects</a>
+                    </div>
+                </li>
+                    <li><a href="{{ url_for('index') }}#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="it-services.html">IT Services & Solutions</a></li>
+                    <li><a href="digital-marketing.html">Digital Marketing</a></li>
+                    <li><a href="ai-ml.html">AI & Machine Learning</a></li>
+                    <li><a href="mechanical-design.html">Mechanical Design</a></li>
+                    <li><a href="civil-planning.html">Civil Planning</a></li>
+                    <li><a href="data-analytics.html">Data Analytics</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> <span>Bangalore, India</span></li>
+                    <li><i class="fas fa-phone"></i> <span>+91 1234</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>info@shivaratatech.com</span></li>
+                    <li><i class="fas fa-clock"></i> <span>Mon-Fri: 9AM - 7PM</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Shivaratna Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+  <script>
+    // Mobile menu and dropdown toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        // Toggle main menu
+        menuToggle.addEventListener('click', function() {
+            navUl.classList.toggle('active');
+        });
+        
+        // Handle dropdowns on mobile
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                    
+                    // Close other dropdowns when one is opened
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
+                    navUl.classList.remove('active');
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

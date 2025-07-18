@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Data Analytics | Shivaratna Technologies{% endblock %}
+
+{% block content %}
+<section class="service-detail">
+    <div class="service-header">
+        <div class="service-icon-large">📊</div>
+        <h1 class="section-title">Data Analytics</h1>
+    </div>
+    
+    <div class="service-content">
+        <p>Transform your raw data into actionable insights that drive business growth and operational efficiency.</p>
+        
+        <h2>Analytics Solutions</h2>
+        <p>We help organizations make data-driven decisions through advanced analytics and visualization.</p>
+        
+        <h2>Our Offerings</h2>
+        <ul>
+            <li>Business Intelligence</li>
+            <li>Data Visualization</li>
+            <li>Predictive Modeling</li>
+            <li>Data Mining</li>
+            <li>Performance Metrics</li>
+            <li>Customer Analytics</li>
+            <li>Operational Analytics</li>
+        </ul>
+        
+        <h2>Our Methodology</h2>
+        <p>We follow a structured approach to understand your data landscape, identify key metrics, and deliver insights that matter to your business.</p>
+        
+        <div class="project-links">
+            <a href="{{ url_for('company_projects', service='analytics') }}" class="project-card">
+                <i class="fas fa-building"></i>
+                <h3>Company Projects</h3>
+                <p>See our analytics implementations for businesses</p>
+            </a>
+            
+            <a href="{{ url_for('student_projects', service='analytics') }}" class="project-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Student Projects</h3>
+                <p>Explore innovative data analysis projects</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

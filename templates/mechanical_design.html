@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Mechanical Design & Production | Shivaratna Technologies{% endblock %}
+
+{% block content %}
+<section class="service-detail">
+    <div class="service-header">
+        <div class="service-icon-large">🛠️</div>
+        <h1 class="section-title">Mechanical Design & Production</h1>
+    </div>
+    
+    <div class="service-content">
+        <p>From concept to production, we deliver precision mechanical design solutions for various industries.</p>
+        
+        <h2>Our Mechanical Services</h2>
+        <p>We combine engineering expertise with advanced tools to create efficient and innovative mechanical solutions.</p>
+        
+        <h2>Capabilities</h2>
+        <ul>
+            <li>3D Modeling & CAD Design</li>
+            <li>Finite Element Analysis (FEA)</li>
+            <li>Prototyping & Product Development</li>
+            <li>Manufacturing Process Design</li>
+            <li>Quality Control Systems</li>
+            <li>Automation Solutions</li>
+            <li>Technical Documentation</li>
+        </ul>
+        
+        <h2>Our Advantage</h2>
+        <p>With a team of experienced mechanical engineers and state-of-the-art tools, we deliver designs that are both innovative and manufacturable.</p>
+        
+        <div class="project-links">
+            <a href="{{ url_for('company_projects', service='mechanical') }}" class="project-card">
+                <i class="fas fa-building"></i>
+                <h3>Company Projects</h3>
+                <p>View our industrial mechanical design projects</p>
+            </a>
+            
+            <a href="{{ url_for('student_projects', service='mechanical') }}" class="project-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Student Projects</h3>
+                <p>See creative mechanical designs by students</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
