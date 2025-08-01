@@ -38,7 +38,8 @@ def company_projects():
 @app.route('/student-projects')
 def student_projects():
     service = request.args.get('service', '')
-    return render_template('student_projects.html', service=service)
+    return render_template('students_project.html', service=service)
 
 if __name__ == '__main__':
     app.run(debug=True)
+

@@ -5,164 +5,251 @@
 {% block content %}
 <section class="projects-page">
     <div class="page-header">
-        <h1 class="section-title">Student Projects</h1>
-        <p>Innovative projects developed by our talented students</p>
+        <div class="header-content">
+            <h1 class="section-title">Student Projects</h1>
+            <p class="subtitle">Innovative projects developed by our talented students</p>
+            <div class="animated-underline"></div>
+        </div>
     </div>
     
     <div class="projects-container">
         {% if service == 'it' %}
-            <h2>IT Services Projects</h2>
+            <h2 class="service-title">
+                <span class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm1 2v14h14V3H5zm6 7h3v5h-2v-3h-1v3H9v-5h2V8h1v2z"/></svg>
+                </span>
+                IT Services Projects
+            </h2>
             <div class="projects-grid">
-                <div class="project-item">
-                    <h3>Campus Management System</h3>
-                    <p>Web application that automates student registration, attendance, and grading for educational institutions.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Rahul Sharma</span>
-                        <span><i class="fas fa-calendar-alt"></i> May 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Campus Management System</h3>
+                        <p>Web application that automates student registration, attendance, and grading for educational institutions.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Rahul Sharma</span>
+                            <span><i class="fas fa-calendar-alt"></i> May 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
-                <div class="project-item">
-                    <h3>Mobile Health Tracker</h3>
-                    <p>Cross-platform app that monitors vital signs and provides health recommendations.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Priya Patel</span>
-                        <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Mobile Health Tracker</h3>
+                        <p>Cross-platform app that monitors vital signs and provides health recommendations.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Priya Patel</span>
+                            <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
             </div>
             
         {% elif service == 'marketing' %}
-            <h2>Digital Marketing Projects</h2>
+            <h2 class="service-title">
+                <span class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.5-6H16v-2H8.5v2zm.5-4h6.5V8H9v2z"/></svg>
+                </span>
+                Digital Marketing Projects
+            </h2>
             <div class="projects-grid">
-                <div class="project-item">
-                    <h3>Local Business SEO Strategy</h3>
-                    <p>Comprehensive local SEO campaign that increased foot traffic by 150% for a small business.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Ananya Gupta</span>
-                        <span><i class="fas fa-calendar-alt"></i> Jun 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Local Business SEO Strategy</h3>
+                        <p>Comprehensive local SEO campaign that increased foot traffic by 150% for a small business.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Ananya Gupta</span>
+                            <span><i class="fas fa-calendar-alt"></i> Jun 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
-                <div class="project-item">
-                    <h3>Influencer Marketing Platform</h3>
-                    <p>Platform connecting brands with micro-influencers for targeted campaigns.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Vikram Joshi</span>
-                        <span><i class="fas fa-calendar-alt"></i> Mar 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Influencer Marketing Platform</h3>
+                        <p>Platform connecting brands with micro-influencers for targeted campaigns.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Vikram Joshi</span>
+                            <span><i class="fas fa-calendar-alt"></i> Mar 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
             </div>
             
         {% elif service == 'ai' %}
-            <h2>AI & ML Projects</h2>
+            <h2 class="service-title">
+                <span class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2v2h4a2 2 0 0 1 2 2v5.535A4 4 0 0 1 20 16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4a4 4 0 0 1 0-7.465V8a2 2 0 0 1 2-2h4V4a2 2 0 0 1 2-2zm0 2h-4v2H6v5.535A4 4 0 0 1 6 16v4h12v-4a4 4 0 0 1 0-7.465V8h-2V4h-4zm0 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4-2a4 4 0 1 0 8 0 4 4 0 0 0-8 0z"/></svg>
+                </span>
+                AI & ML Projects
+            </h2>
             <div class="projects-grid">
-                <div class="project-item">
-                    <h3>Sign Language Translator</h3>
-                    <p>Computer vision system that translates sign language to text in real-time.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Neha Reddy</span>
-                        <span><i class="fas fa-calendar-alt"></i> May 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Sign Language Translator</h3>
+                        <p>Computer vision system that translates sign language to text in real-time.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Neha Reddy</span>
+                            <span><i class="fas fa-calendar-alt"></i> May 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
-                <div class="project-item">
-                    <h3>Agricultural Disease Detection</h3>
-                    <p>ML model that identifies plant diseases from leaf images with 92% accuracy.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Arjun Kumar</span>
-                        <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Agricultural Disease Detection</h3>
+                        <p>ML model that identifies plant diseases from leaf images with 92% accuracy.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Arjun Kumar</span>
+                            <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
             </div>
             
         {% elif service == 'mechanical' %}
-            <h2>Mechanical Design Projects</h2>
+            <h2 class="service-title">
+                <span class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 4h2v5h7v2h-9V4zM3 11h9V4h-2v5H3v2zm4 9h2v-7H3v-2h7v9zm8 0v-9h7v-2h-9v7h2z"/></svg>
+                </span>
+                Mechanical Design Projects
+            </h2>
             <div class="projects-grid">
-                <div class="project-item">
-                    <h3>Solar-Powered Water Purifier</h3>
-                    <p>Portable device that uses solar energy to purify water for rural communities.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Deepak Singh</span>
-                        <span><i class="fas fa-calendar-alt"></i> Jun 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Solar-Powered Water Purifier</h3>
+                        <p>Portable device that uses solar energy to purify water for rural communities.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Deepak Singh</span>
+                            <span><i class="fas fa-calendar-alt"></i> Jun 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
-                <div class="project-item">
-                    <h3>3D Printed Prosthetic Hand</h3>
-                    <p>Low-cost prosthetic hand with basic grasping functionality.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Meera Iyer</span>
-                        <span><i class="fas fa-calendar-alt"></i> Feb 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>3D Printed Prosthetic Hand</h3>
+                        <p>Low-cost prosthetic hand with basic grasping functionality.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Meera Iyer</span>
+                            <span><i class="fas fa-calendar-alt"></i> Feb 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
             </div>
             
         {% elif service == 'civil' %}
-            <h2>Civil Planning Projects</h2>
+            <h2 class="service-title">
+                <span class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 20h-2v-2h2v2zm-4 0h-2v-2h2v2zm-4 0h-2v-2h2v2zm-4 0H7v-2h2v2zm-4 0H3v-2h2v2zm16-4h-2v-2h2v2zM5 16H3v-2h2v2zm12-4h-2v-2h2v2zM9 12H7v-2h2v2zm8-4h-2V6h2v2zM5 8H3V6h2v2zm8-4h-2V2h2v2zm4 0h-2V2h2v2z"/></svg>
+                </span>
+                Civil Planning Projects
+            </h2>
             <div class="projects-grid">
-                <div class="project-item">
-                    <h3>Flood-Resistant Housing Design</h3>
-                    <p>Innovative housing design for flood-prone areas with elevated structures.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Sanjay Verma</span>
-                        <span><i class="fas fa-calendar-alt"></i> May 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Flood-Resistant Housing Design</h3>
+                        <p>Innovative housing design for flood-prone areas with elevated structures.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Sanjay Verma</span>
+                            <span><i class="fas fa-calendar-alt"></i> May 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
-                <div class="project-item">
-                    <h3>Urban Traffic Flow Optimization</h3>
-                    <p>Simulation model that suggests traffic light timing improvements for reduced congestion.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Anjali Desai</span>
-                        <span><i class="fas fa-calendar-alt"></i> Mar 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Urban Traffic Flow Optimization</h3>
+                        <p>Simulation model that suggests traffic light timing improvements for reduced congestion.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Anjali Desai</span>
+                            <span><i class="fas fa-calendar-alt"></i> Mar 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
             </div>
             
         {% elif service == 'analytics' %}
-            <h2>Data Analytics Projects</h2>
+            <h2 class="service-title">
+                <span class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 2v14h14V5H5zm2 2h2v10H7V7zm6 4h2v6h-2v-6zm-6 2h2v4H7v-4zm6-6h2v2h-2V7z"/></svg>
+                </span>
+                Data Analytics Projects
+            </h2>
             <div class="projects-grid">
-                <div class="project-item">
-                    <h3>COVID-19 Spread Predictor</h3>
-                    <p>Dashboard that predicts infection spread based on mobility data and case history.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Rohan Malhotra</span>
-                        <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>COVID-19 Spread Predictor</h3>
+                        <p>Dashboard that predicts infection spread based on mobility data and case history.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Rohan Malhotra</span>
+                            <span><i class="fas fa-calendar-alt"></i> Apr 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
-                <div class="project-item">
-                    <h3>Stock Market Sentiment Analysis</h3>
-                    <p>Tool that analyzes news sentiment to predict stock price movements.</p>
-                    <div class="project-meta">
-                        <span><i class="fas fa-user-graduate"></i> Sneha Kapoor</span>
-                        <span><i class="fas fa-calendar-alt"></i> Jan 2025</span>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Stock Market Sentiment Analysis</h3>
+                        <p>Tool that analyzes news sentiment to predict stock price movements.</p>
+                        <div class="project-meta">
+                            <span><i class="fas fa-user-graduate"></i> Sneha Kapoor</span>
+                            <span><i class="fas fa-calendar-alt"></i> Jan 2025</span>
+                        </div>
                     </div>
+                    <div class="card-gradient-border"></div>
                 </div>
             </div>
             
         {% else %}
             <div class="all-services">
-                <h2>Browse Projects by Service</h2>
+                <h2 class="browse-title">Browse Projects by Service</h2>
                 <div class="services-grid">
                     <a href="?service=it" class="service-card">
-                        <div class="service-icon">💻</div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm1 2v14h14V3H5zm6 7h3v5h-2v-3h-1v3H9v-5h2V8h1v2z"/></svg>
+                        </div>
                         <h3>IT Services</h3>
+                        <div class="hover-effect"></div>
                     </a>
                     <a href="?service=marketing" class="service-card">
-                        <div class="service-icon">📈</div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.5-6H16v-2H8.5v2zm.5-4h6.5V8H9v2z"/></svg>
+                        </div>
                         <h3>Digital Marketing</h3>
+                        <div class="hover-effect"></div>
                     </a>
                     <a href="?service=ai" class="service-card">
-                        <div class="service-icon">🤖</div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2v2h4a2 2 0 0 1 2 2v5.535A4 4 0 0 1 20 16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4a4 4 0 0 1 0-7.465V8a2 2 0 0 1 2-2h4V4a2 2 0 0 1 2-2zm0 2h-4v2H6v5.535A4 4 0 0 1 6 16v4h12v-4a4 4 0 0 1 0-7.465V8h-2V4h-4zm0 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4-2a4 4 0 1 0 8 0 4 4 0 0 0-8 0z"/></svg>
+                        </div>
                         <h3>AI & ML</h3>
+                        <div class="hover-effect"></div>
                     </a>
                     <a href="?service=mechanical" class="service-card">
-                        <div class="service-icon">🛠️</div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 4h2v5h7v2h-9V4zM3 11h9V4h-2v5H3v2zm4 9h2v-7H3v-2h7v9zm8 0v-9h7v-2h-9v7h2z"/></svg>
+                        </div>
                         <h3>Mechanical Design</h3>
+                        <div class="hover-effect"></div>
                     </a>
                     <a href="?service=civil" class="service-card">
-                        <div class="service-icon">🏗️</div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 20h-2v-2h2v2zm-4 0h-2v-2h2v2zm-4 0h-2v-2h2v2zm-4 0H7v-2h2v2zm-4 0H3v-2h2v2zm16-4h-2v-2h2v2zM5 16H3v-2h2v2zm12-4h-2v-2h2v2zM9 12H7v-2h2v2zm8-4h-2V6h2v2zM5 8H3V6h2v2zm8-4h-2V2h2v2zm4 0h-2V2h2v2z"/></svg>
+                        </div>
                         <h3>Civil Planning</h3>
+                        <div class="hover-effect"></div>
                     </a>
                     <a href="?service=analytics" class="service-card">
-                        <div class="service-icon">📊</div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 2v14h14V5H5zm2 2h2v10H7V7zm6 4h2v6h-2v-6zm-6 2h2v4H7v-4zm6-6h2v2h-2V7z"/></svg>
+                        </div>
                         <h3>Data Analytics</h3>
+                        <div class="hover-effect"></div>
                     </a>
                 </div>
             </div>
@@ -171,59 +258,184 @@
 </section>
 
 <style>
+    :root {
+        --primary: #4f46e5;
+        --primary-light: #6366f1;
+        --secondary: #10b981;
+        --accent: #f59e0b;
+        --light: #f8fafc;
+        --dark: #1e293b;
+        --text: #334155;
+        --text-light: #64748b;
+        --white: #ffffff;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --transition: all 0.3s ease;
+        --gradient: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+    }
+
     .projects-page {
-        padding: 8rem 5% 6rem;
+        padding: 6rem 5% 8rem;
         background-color: var(--white);
+        min-height: 100vh;
     }
     
     .page-header {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
+        position: relative;
     }
     
-    .page-header p {
+    .header-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+    
+    .subtitle {
         color: var(--text-light);
-        font-size: 1.2rem;
+        font-size: 1.25rem;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto;
     }
     
-    .projects-container h2 {
-        color: var(--primary);
-        margin-bottom: 2rem;
+    .animated-underline {
+        height: 4px;
+        width: 100px;
+        background: var(--gradient);
+        margin: 1.5rem auto 0;
+        border-radius: 2px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .animated-underline::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+        animation: shine 2s infinite;
+    }
+    
+    @keyframes shine {
+        100% {
+            left: 100%;
+        }
+    }
+    
+    .projects-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .service-title {
+        color: var(--dark);
+        margin-bottom: 3rem;
         text-align: center;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .service-title .service-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .service-title .service-icon svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--white);
+    }
+    
+    .browse-title {
+        color: var(--dark);
+        margin-bottom: 3rem;
+        text-align: center;
+        font-size: 2rem;
+        position: relative;
     }
     
     .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-bottom: 3rem;
+        gap: 2.5rem;
+        margin-bottom: 4rem;
     }
     
-    .project-item {
+    .project-card {
         background-color: var(--light);
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: var(--shadow);
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
         transition: var(--transition);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        z-index: 1;
     }
     
-    .project-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--gradient);
+        opacity: 0;
+        transition: var(--transition);
+        z-index: -1;
     }
     
-    .project-item h3 {
-        color: var(--secondary);
+    .project-card:hover {
+        transform: translateY(-8px);
+    }
+    
+    .project-card:hover::before {
+        opacity: 0.1;
+    }
+    
+    .card-content {
+        padding: 2rem;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .project-card h3 {
+        color: var(--dark);
         margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
     }
     
-    .project-item p {
+    .project-card p {
         color: var(--text-light);
         margin-bottom: 1.5rem;
+        line-height: 1.6;
     }
     
     .project-meta {
         display: flex;
+        flex-wrap: wrap;
         gap: 1.5rem;
         color: var(--text-light);
         font-size: 0.9rem;
@@ -234,19 +446,156 @@
         color: var(--accent);
     }
     
+    .card-gradient-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--gradient);
+        opacity: 0;
+        transition: var(--transition);
+    }
+    
+    .project-card:hover .card-gradient-border {
+        opacity: 1;
+    }
+    
     .all-services {
         text-align: center;
     }
     
     .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .service-card {
+        background-color: var(--light);
+        padding: 2.5rem 1.5rem;
+        border-radius: 12px;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--gradient);
+        opacity: 0;
+        transition: var(--transition);
+        z-index: -1;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .service-card:hover::before {
+        opacity: 0.05;
+    }
+    
+    .service-card h3 {
+        color: var(--dark);
+        margin-top: 1.5rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        background: var(--gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+    
+    .service-card:hover .service-icon {
+        transform: scale(1.1);
+    }
+    
+    .service-icon svg {
+        width: 30px;
+        height: 30px;
+        fill: var(--white);
+    }
+    
+    .hover-effect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+        opacity: 0;
+        transition: var(--transition);
+    }
+    
+    .service-card:hover .hover-effect {
+        opacity: 1;
+    }
+    
+    .back-to-all {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--gradient);
+        color: white;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3), 0 2px 4px -1px rgba(79, 70, 229, 0.2);
+    }
+    
+    .back-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.2);
     }
     
     @media (max-width: 768px) {
+        .section-title {
+            font-size: 2.25rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+        }
+        
         .projects-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .services-grid {
             grid-template-columns: 1fr;
         }
     }

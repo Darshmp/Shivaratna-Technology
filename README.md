@@ -1,2 +1,0 @@
-# Shivaratna-Technologies
-# Shivaratna-Technologies

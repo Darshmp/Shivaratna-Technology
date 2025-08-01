@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>{% block title %}Shivaratna Technologies{% endblock %}</title>
+    <meta name="description" content="Shivaratna Technologies - Innovative IT Solutions for your business. We specialize in AI, digital transformation, and cutting-edge technology services.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>{% block title %}Shivaratna Technologies | Innovative IT Solutions{% endblock %}</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --text: #333;
-            --text-light: #777;
-            --white: #fff;
-            --shadow: 0 5px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
+            --primary: #1a2a6c;
+            --secondary: #21d4fd;
+            --accent: #ff4d4d;
+            --light: #f8f9fa;
+            --dark: #121212;
+            --text: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 35px rgba(0,0,0,0.15);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --section-padding: 8rem 5%;
         }
 
         * {
@@ -26,20 +34,25 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
+            background-color: var(--white);
+            scroll-behavior: smooth;
         }
 
         h1, h2, h3, h4 {
-            line-height: 1.2;
-            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
         }
 
         a {
             text-decoration: none;
             color: inherit;
+            transition: var(--transition);
         }
 
         ul {
@@ -49,93 +62,146 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 5%;
         }
 
         .btn {
-            display: inline-block;
-            background-color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
             color: var(--white);
-            padding: 0.8rem 1.8rem;
-            border-radius: 4px;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
             font-weight: 600;
             transition: var(--transition);
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(33, 212, 253, 0.3);
+            font-size: 1rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
         }
 
         .btn:hover {
-            background-color: #c0392b;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn:hover::before {
+            opacity: 1;
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--accent);
-            color: var(--accent);
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            box-shadow: none;
         }
 
         .btn-outline:hover {
-            background: var(--accent);
+            background: var(--secondary);
             color: var(--white);
         }
 
         .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 2.8rem;
+            margin-bottom: 2.5rem;
             color: var(--primary);
             position: relative;
             display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -10px;
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent);
+            bottom: -15px;
+            width: 80px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 3px;
         }
 
         .text-center {
             text-align: center;
         }
 
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         /* Header Styles */
         header {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 1.2rem 5%;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: var(--dark);
+            padding: 1.5rem 5%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 1rem 5%;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .logo span {
-            color: var(--secondary);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav {
@@ -147,7 +213,12 @@
 
         nav ul {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
         }
 
         nav ul li a {
@@ -155,159 +226,131 @@
             transition: var(--transition);
             position: relative;
             padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.05rem;
         }
 
         nav ul li a::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: 30px;
+            bottom: 0;
             width: 0;
             height: 2px;
-            background-color: var(--secondary);
+            background: var(--gradient);
             transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
         }
 
         nav ul li a:hover::after {
             width: 100%;
         }
 
-        /* Service Detail Specific */
-        .service-detail {
-            padding: 8rem 5% 6rem;
-            background-color: var(--white);
-        }
-
-        .service-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .service-icon-large {
-            font-size: 4rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .service-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .service-content h2 {
-            color: var(--primary);
-            margin: 2rem 0 1rem;
-        }
-
-        .service-content p {
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        .service-content ul {
-            margin-bottom: 2rem;
-            padding-left: 1.5rem;
-        }
-
-        .service-content li {
-            margin-bottom: 0.8rem;
-            position: relative;
-            padding-left: 1.5rem;
-            color: var(--text-light);
-        }
-
-        .service-content li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-
-        .project-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .project-card {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            width: 300px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .project-card i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
         /* Dropdown Styles */
-.dropdown {
-    position: relative;
-}
+        .dropdown {
+            position: relative;
+        }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--primary);
-    min-width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 0 0 4px 4px;
-    overflow: hidden;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            min-width: 220px;
+            box-shadow: var(--shadow);
+            z-index: 100;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            padding: 0.5rem 0;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
 
-.dropdown-content a {
-    color: var(--white);
-    padding: 12px 16px;
-    display: block;
-    transition: var(--transition);
-}
+        .dropdown-content a {
+            color: var(--text);
+            padding: 0.8rem 1.5rem;
+            display: block;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
 
-.dropdown-content a:hover {
-    background-color: var(--secondary);
-}
+        .dropdown-content a:hover {
+            background: linear-gradient(90deg, rgba(26, 42, 108, 0.05), rgba(33, 212, 253, 0.05));
+            color: var(--primary);
+            padding-left: 1.8rem;
+        }
+
+        /* Mobile Menu Styles */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
+            z-index: 1001;
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-top: 80px; /* Account for fixed header */
+        }
 
         /* Footer Styles */
         footer {
             background-color: var(--dark);
             color: var(--white);
-            padding: 5rem 5% 2rem;
+            padding: 6rem 5% 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--white), transparent);
+            z-index: 0;
         }
 
         .footer-container {
             display: flex;
             flex-direction: column;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: space-between;
         }
 
         .footer-column {
-            width: 100%;
+            flex: 1;
+            min-width: 250px;
             margin-bottom: 2rem;
         }
 
         .footer-column h3 {
-            color: var(--secondary);
+            color: var(--white);
             font-size: 1.4rem;
             margin-bottom: 1.8rem;
             position: relative;
@@ -321,7 +364,8 @@
             bottom: 0;
             width: 50px;
             height: 3px;
-            background-color: var(--accent);
+            background: var(--gradient);
+            border-radius: 3px;
         }
 
         .footer-about p {
@@ -331,13 +375,26 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
             transition: var(--transition);
             display: inline-block;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: var(--transition);
+            color: var(--secondary);
         }
 
         .footer-links a:hover {
@@ -345,11 +402,16 @@
             transform: translateX(5px);
         }
 
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: -5px;
+        }
+
         .contact-info li {
             display: flex;
             align-items: flex-start;
             margin-bottom: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .contact-info i {
@@ -359,13 +421,13 @@
             margin-top: 3px;
         }
 
-        .social-icons {
+        .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
         }
 
-        .social-icons a {
+        .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -378,333 +440,712 @@
             transition: var(--transition);
         }
 
-        .social-icons a:hover {
-            background-color: var(--secondary);
+        .social-links a:hover {
+            background: var(--gradient);
             transform: translateY(-5px);
         }
 
-        .copyright {
+        .footer-bottom {
             text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
+            margin-top: -3rem;
+            padding-top: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .copyright {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-/* Mobile Menu Styles */
-    .menu-toggle {
-        display: none;
-        cursor: pointer;
-        font-size: 1.5rem;
-    }
-
-    /* Media Query for screens up to 768px */
-    @media (max-width: 768px) {
-        .menu-toggle {
-            display: block;
-        }
-        
-        nav ul {
-            display: none;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background-color: var(--primary);
-            flex-direction: column;
-            padding: 1rem 5%;
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        }
-        
-        nav ul.active {
-            display: flex;
-        }
-        
-        nav ul li {
-            width: 100%;
-            padding: 0.5rem 0;
-        }
-        
-        nav ul li a::after {
-            bottom: 0;
-        }
-        
-        .dropdown-content {
-            position: static;
-            display: none;
-            width: 100%;
-            box-shadow: none;
-            background-color: rgba(0,0,0,0.1);
-        }
-        
-        .dropdown.active .dropdown-content {
-            display: block;
-        }
-        
-        .hero h1 {
-            font-size: 1.8rem;
-        }
-        
-        .hero p {
             font-size: 1rem;
+            margin-bottom: 1rem;
         }
-        
-        .section-title {
-            font-size: 1.5rem;
-        }
-    }
 
-    /* Media Query for screens up to 350px */
-    @media (max-width: 350px) {
-        .logo {
-            font-size: 1.4rem;
-        }
-        
-        .menu-toggle {
-            font-size: 1.3rem;
-        }
-        
-        .hero {
-            padding: 8rem 5% 4rem;
-        }
-        
-        .hero h1 {
-            font-size: 1.5rem;
-        }
-        
-        .btn {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
-        }
-        
-        .service-card {
-            padding: 1.5rem 1rem;
-        }
-        
-        .service-icon {
-            font-size: 2rem;
-        }
-        
-        .service-card h3 {
-            font-size: 1.1rem;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.2rem;
-        }
-        
-        .contact-info li {
-            font-size: 0.9rem;
-        }
-    }
-        @media (min-width: 768px) {
-            .footer-container {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
+        .footer-links-bottom {
             
-            .footer-column {
-                flex: 1;
-                min-width: 200px;
-            }
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
+        .footer-links-bottom a {
+            margin-top: 3px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .footer-links-bottom a:hover {
+            color: var(--secondary);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        @media (max-width: 350px) {
+    /* Header adjustments for very small screens */
+    header {
+        padding: 1rem 3% !important;
+    }
+    
+    .header-container {
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        font-size: 1.3rem !important;
+        margin-right: auto;
+    }
+    
+    .logo img {
+        height: 25px !important;
+    }
+    
+    .menu-toggle {
+        font-size: 1.3rem !important;
+        margin-left: auto;
+    }
+    
+    nav ul {
+        width: 100% !important;
+        max-width: none !important;
+        margin-top: 60px !important;
+        padding: 1rem !important;
+    }
+    
+    nav ul li a {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .btn-outline {
+        padding: 0.6rem 1rem !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+        /* Media Queries */
         @media (max-width: 768px) {
-            .section-title {
-                font-size: 1.8rem;
+            .menu-toggle {
+                display: block;
             }
             
             nav ul {
+                position: fixed;
+                top: 70%;
+                right: -100%;
+                width: 50%;
+                max-width: 350px;
+                height: 75vh;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1rem 1rem;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                z-index: 1000;
+                gap: 1rem;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav ul li a {
+                padding: 0.2rem;
+                border-radius: 2px;
+                color: var(--text);
+            }
+            
+            nav ul li a:hover {
+                background: rgba(33, 212, 253, 0.1);
+                color: var(--primary);
+            }
+            
+            nav ul li a::after {
                 display: none;
             }
             
-            .project-links {
+            .dropdown-content {
+                position: static;
+                display: none;
+                width: 100%;
+                box-shadow: none;
+                background: rgba(0,0,0,0.03);
+                margin-top: 0.5rem;
+                border-radius: 4px;
+                transform: none;
+                opacity: 1;
+                padding: 0;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .footer-top {
                 flex-direction: column;
-                align-items: center;
+                gap: 2rem;
             }
         }
-         @media (max-width: 500px) {
-        .footer-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.4rem;
+
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .logo img {
+                height: 30px;
+            }
+            
+            .footer-column h3 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info li {
+                font-size: 0.9rem;
+            }
+            
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
         }
-        
-        .footer-column {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-column:nth-child(1) {
-            grid-column: span 2;
-            font-size: 1rem;
-        }
-       
-        .footer-column:nth-child(3),
-        .footer-column:nth-child(4) {
-            grid-column: span 0;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.6rem;
-            font-size: 0.8rem;
-        }
-        
-        .contact-info li{
-            margin-bottom: 0.6rem;
-            font-size: 0.8rem;
-            margin-right: 10px;
-        }
-        .social-icons {
-            margin-top: 1rem;
-        }
-        
-        .social-icons a {
-            width: 25px;
-            height: 25px;
-            font-size: 0.7rem;
-        }
-        
-        .copyright {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            font-size: 0.8rem;
-        }
+@media (max-width: 350px) {
+    /* Dropdown container adjustments */
+    .dropdown {
+        position: relative;
+        width: 100%;
     }
-  </style>
-    {% block extra_css %}{% endblock %}
+
+    /* Dropdown content styling */
+    .dropdown-content {
+        font-size: 0.7rem !important;  /* Smaller font size */
+        min-width: 140px !important;   /* Narrower width */
+        left: 0 !important;            /* Force left alignment */
+        right: auto !important;        /* Disable right alignment */
+        transform: none !important;    /* Remove transform animations */
+        position: absolute;            /* Keep absolute positioning */
+        display: none;                 /* Start hidden */
+        background: #fff;              /* Solid background */
+        border: 1px solid #eee;       /* Add border */
+    }
+
+    /* Dropdown links */
+    .dropdown-content a {
+        padding: 0.5rem 1rem !important;  /* Compact padding */
+        white-space: nowrap;               /* Prevent text wrapping */
+    }
+
+    /* Show dropdown when active */
+    .dropdown.active .dropdown-content {
+        display: block !important;
+    }
+
+    /* Disable hover effects on mobile */
+    .dropdown:hover .dropdown-content {
+        display: none !important;
+    }
+
+    /* Adjust parent link */
+    .dropdown > a {
+        font-size: 0.8rem;  /* Smaller font for parent */
+    }
+}
+       /* Base Variables */
+:root {
+  --primary: #2c3e50;
+  --secondary: #1abc9c;
+  --accent: #3498db;
+  --light: #ecf0f1;
+  --white: #ffffff;
+  --text: #333333;
+  --text-light: #7f8c8d;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  background-color: var(--light);
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Service Detail Page Styles */
+.service-detail {
+  padding: 6rem 5% 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.service-icon-large {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.service-content {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.service-content h2 {
+  color: var(--secondary);
+  margin: 2rem 0 1rem;
+  font-size: 1.8rem;
+}
+
+.service-content p {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+.service-content ul {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.service-content li {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.project-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  background-color: var(--light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card i {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* Projects Page Styles (for both company and student projects) */
+.projects-page {
+  padding: 6rem 5% 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header p {
+  color: var(--text-light);
+  font-size: 1.2rem;
+}
+
+.projects-container h2 {
+  color: var(--primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.project-item {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.project-item h3 {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.project-item p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.project-meta {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.project-meta i {
+  margin-right: 5px;
+  color: var(--accent);
+}
+
+.all-services {
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-card h3 {
+  color: var(--primary);
+  margin-bottom: 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .service-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-detail, .projects-page {
+    padding: 5rem 5% 3rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .project-links, .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-content h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-detail, .projects-page {
+    padding: 4rem 5% 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .service-content {
+    padding: 1.5rem;
+  }
+  
+  .project-item, .project-card {
+    padding: 1.5rem;
+  }
+  
+  .project-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+    </style> {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <header>
-    <div class="header-container">
-        <div class="logo">Shivaratna <span>Technologies</span></div>
-        <nav>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul>
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('index') }}#services">Services</a></li>
-                <li class="dropdown">
-                    <a href="#projects">Projects <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="{{ url_for('company_projects') }}">Company Projects</a>
-                        <a href="{{ url_for('student_projects') }}">Student Projects</a>
-                    </div>
-                </li>
-                <li><a href="{{ url_for('index') }}#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-    
-    {% block content %}{% endblock %}
-    
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Shivaratna Technologies</h3>
-                <p>Innovative IT solutions provider helping businesses harness the power of technology for growth and efficiency.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <!-- <img src="https://via.placeholder.com/40x40" alt="Shivaratna Technologies Logo"> -->
+                <span>Shivaratna</span> Technologies
+            </a>
+            <nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
                 </div>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
+                <ul>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('index') }}#services">Services</a></li>
                     <li class="dropdown">
-                    <a href="#projects">Projects <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                         <a href="{{ url_for('company_projects') }}">Company Projects</a>
-                         <a href="{{ url_for('student_projects') }}">Student Projects</a>
-                    </div>
-                </li>
+                        <a href="#projects">Projects <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('company_projects') }}">Company </a>
+                            <a href="{{ url_for('student_projects') }}">Student </a>
+                        </div>
+                    </li>
                     <li><a href="{{ url_for('index') }}#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn btn-outline">Get Started</a></li>
                 </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Services</h3>
-                <ul class="footer-links">
-                    <li><a href="it-services.html">IT Services & Solutions</a></li>
-                    <li><a href="digital-marketing.html">Digital Marketing</a></li>
-                    <li><a href="ai-ml.html">AI & Machine Learning</a></li>
-                    <li><a href="mechanical-design.html">Mechanical Design</a></li>
-                    <li><a href="civil-planning.html">Civil Planning</a></li>
-                    <li><a href="data-analytics.html">Data Analytics</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <ul class="contact-info">
-                    <li><i class="fas fa-map-marker-alt"></i> <span>Bangalore, India</span></li>
-                    <li><i class="fas fa-phone"></i> <span>+91 1234</span></li>
-                    <li><i class="fas fa-envelope"></i> <span>info@shivaratatech.com</span></li>
-                    <li><i class="fas fa-clock"></i> <span>Mon-Fri: 9AM - 7PM</span></li>
-                </ul>
-            </div>
+            </nav>
         </div>
-        
-        <div class="copyright">
-            <p>&copy; 2025 Shivaratna Technologies. All rights reserved.</p>
+    </header>
+
+    <!-- Main Content Block -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-column">
+                        <h3>Shivaratna Technologies</h3>
+                        <div class="footer-about">
+                            <p>Innovative IT solutions provider helping businesses harness the power of technology for growth and efficiency in the digital age.</p>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('index') }}#services">Services</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="{{ url_for('index') }}#about">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="{{ url_for('it_services') }}">IT Services & Solutions</a></li>
+                            <li><a href="{{ url_for('digital_marketing') }}">Digital Marketing</a></li>
+                            <li><a href="{{ url_for('ai_ml') }}">AI & Machine Learning</a></li>
+                            <li><a href="{{ url_for('mechanical_design') }}">Mechanical Design</a></li>
+                            <li><a href="{{ url_for('civil_planning') }}">Civil Planning</a></li>
+                            <li><a href="{{ url_for('data_analytics') }}">Data Analytics</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> <span>#123, Tech Park, Bangalore, Karnataka 560001, India</span></li>
+                            <li><i class="fas fa-phone"></i> <span>+91 1234 567890</span></li>
+                            <li><i class="fas fa-envelope"></i> <span>info@shivaratnatech.com</span></li>
+                            <li><i class="fas fa-clock"></i> <span>Mon-Fri: 9:00 AM - 7:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <p>&copy; 2025 Shivaratna Technologies. All rights reserved.</p>
+                    </div>
+                    <div class="footer-links-bottom">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
-  <script>
-    // Mobile menu and dropdown toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navUl = document.querySelector('nav ul');
-        const dropdowns = document.querySelectorAll('.dropdown');
-        
-        // Toggle main menu
-        menuToggle.addEventListener('click', function() {
-            navUl.classList.toggle('active');
-        });
-        
-        // Handle dropdowns on mobile
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('a');
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        // Mobile menu and dropdown toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navUl = document.querySelector('nav ul');
+            const dropdowns = document.querySelectorAll('.dropdown');
             
-            link.addEventListener('click', function(e) {
+            // Toggle main menu
+            menuToggle.addEventListener('click', function() {
+                navUl.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+            
+            // Handle dropdowns on mobile
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                        
+                        // Close other dropdowns when one is opened
+                        dropdowns.forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                    
-                    // Close other dropdowns when one is opened
-                    dropdowns.forEach(otherDropdown => {
-                        if (otherDropdown !== dropdown) {
-                            otherDropdown.classList.remove('active');
-                        }
-                    });
+                    if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
+                        navUl.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    }
+                }
+            });
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
                 }
             });
         });
-        
-        // Close menu when clicking outside on mobile
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
-                    navUl.classList.remove('active');
-                    dropdowns.forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                    });
-                }
-            }
-        });
-    });
-</script>
+    </script>
+    {% block extra_js %}{% endblock %}
 </body>
 </html>
